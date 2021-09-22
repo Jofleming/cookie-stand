@@ -5,22 +5,30 @@ function build_store(name, min_cus, max_cus, average_cook) {
         "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM"
     ];
     let total=0;
-
-
+    this.max_cus = max_cus;
+    this.min_cus = min_cus;
+    this.average_cook = average_cook;
     let array_target = document.getElementById('array_target');
     console.log (array_target);
     let childOfBody = document.createElement('ul');
     array_target.appendChild(childOfBody);
-    childOfBody.textContent = name
+    childOfBody.textContent = name;
+    // function generateRange(min_cus, max_cus) {
+    //     let result = (max_cus - min_cus);
+    //     console.log(result);
+    //      return result;
+    // }
     for (let i = 0; i < 14; i++ ) {
-        let result = Math.round(Math.floor(Math.random() * max_cus) * average_cook);
-        let listItem = document.createElement('li')
-        hourly_sales[i]= ` ${hourly_sales[i]}:   ${result} `;
-        total = result + total; 
+        let generateNumber = Math.floor(Math.random() * (this.max_cus - this.min_cus + 1) + this.min_cus); //generateRange(this.min_cus, this.max_cus);
+        console.log(generateNumber);
+        let true_result = Math.floor(generateNumber * this.average_cook);
+        let listItem = document.createElement('li');
+        hourly_sales[i]= ` ${hourly_sales[i]}:   ${true_result} `;
+        total = true_result + total; 
         listItem.textContent = hourly_sales[i];
-        childOfBody.appendChild(listItem)
+        childOfBody.appendChild(listItem);
     }   
-    listItem = document.createElement('li')
+    listItem = document.createElement('li');
     listItem.textContent = 'Total: ' + total;
     childOfBody.appendChild(listItem);
     
@@ -46,14 +54,23 @@ function build_store(name, min_cus, max_cus, average_cook) {
     }
 }
 
-let store1 = build_store("Seattle", 23, 65, 6.3);
-let store2 = build_store("Tokyo", 3, 24, 1.2);
-let store3 = build_store("Dubai", 11, 38, 3.7);
-let store4 = build_store("Paris", 20, 38, 2.3);
-let store5 = build_store("Lima", 2, 16, 4.6);
+let storeSeattle = new build_store("Seattle", 23, 65, 6.3);
+let storeTokyo = new build_store("Tokyo", 3, 24, 1.2);
+let storeDubai = new build_store("Dubai", 11, 38, 3.7);
+let storeParis = new build_store("Paris", 20, 38, 2.3);
+let storeLima = new build_store("Lima", 2, 16, 4.6);
 
-store1.print_info();
-store2.print_info();
-store3.print_info();
-store4.print_info();
-store5.print_info();
+storeSeattle.print_info();
+storeTokyo.print_info();
+storeDubai.print_info();
+storeParis.print_info();
+storeLima.print_info();
+
+
+// function generateRange(min, max) {
+//     return Math.floor(Math.random()) * (max - min + 1) + min);
+// }
+// let generateNumber = generateRange(this.min_cus, this.max_cus);
+// Math.floor(generateNumber * this.average_cook);
+
+// Math.round(Math.floor(Math.random() * ((this.max_cus - this.min_cus + 1) + this.min_cus) * average_cook));
