@@ -104,6 +104,33 @@ function rendHead() {
 rendFoot();
 
 
+// Event Handler
+let newStoreFormEl = document.getElementById('newStoreForm');
+
+
+function handleNewStore(formSubmission) {
+    formSubmission.preventDefault();
+    let name = formSubmission.target.newStore.value;
+    let min_cus = formSubmission.target.min_cus.value;
+    let max_cus = formSubmission.target.max_cus.value;
+    let avgcpp = formSubmission.target.avgcpp.value;
+    let newMin_Cus = parseInt(min_cus);
+    let newMax_Cus = parseInt(max_cus);
+    let newAvgcpp = parseInt(avgcpp);
+    let storeNew = new Store(name, newMin_Cus, newMax_Cus, newAvgcpp);
+    storeNew.calcavgcook();
+    storeNew.rendtr();
+}
+
+newStoreFormEl.addEventListener('submit', handleNewStore);
+
+// let parentElem = document.getElementById();
+// let rowElem = document.createElement();
+// let dataElem = document.createElement
+// dataElem.innerText = 
+
+
+
 // Not Using:
 
 // function renderAllStores() {
