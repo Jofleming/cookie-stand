@@ -96,3 +96,13 @@
 
 // Math.round(Math.floor(Math.random() * ((this.max_cus - this.min_cus + 1) + this.min_cus) * average_cook));
 
+// Seattle.calcavgcook();
+// Seattle.rendtr();
+// Lima.calcavgcook();
+// Lima.rendtr();
+// Paris.calcavgcook();
+// Paris.rendtr();
+// Dubai.calcavgcook();
+// Dubai.rendtr();
+// Tokyo.calcavgcook();
+// Tokyo.rendtr();
