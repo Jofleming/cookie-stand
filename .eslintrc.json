@@ -34,7 +34,7 @@
           "builtinGlobals": true
         }
       ],
-      "semi": [2, "always"],
+      "semi": [4, "always"],
       "eol-last": "error"
     }
   }
