@@ -11,9 +11,32 @@
         <a href="index.html">Back Home</a>
       </h2>
     </header>
-    <table id="sales_data">
+    <main>
+      <table id="sales_data">
 
-    </table>
+      </table>
+  
+      <div>
+        <form id="newStoreForm">
+          <fieldset>
+            <legend>Create New Store!</legend>
+            <label>Store Location</label>
+            <input name='newStore' type='text' required>
+            <label>Minimum Customers Per Hour</label>
+            <input name='min_cus' type='number' required>
+            <label>Maximum Customers Per Hour</label>
+            <input name='max_cus' type='number' required>
+            <label>Average Cookies Sold Per Customer</label>
+            <input name='avgcpp' type='number' step='0.01' required>
+            <button>Create New Location!</button>
+          </fieldset>
+        </form>
+      </div>
+
+    </main>
+    <footer>
+  
+    </footer>
     <script src='app.js'></script>
   </body>
 </html>
